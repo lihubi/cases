@@ -8,6 +8,10 @@ body,html{
 body{
     background-image: url("../imgs/ring.jpg");
 }
+p{
+    color: #ccc;
+    text-align: center;
+}
 .box{
     width: 80%;
     height: 100%;

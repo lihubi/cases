@@ -7,38 +7,29 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="js/jquery.2.1.4.min.js"></script>
     <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
-    <link rel="stylesheet" href="css/animate.css">
 </head>
 <body>
 <div class="box" id="app">
     <header>
-        <img src="imgs/ring.png" @click="hid" alt="" >
         <div class="select">
-            <transition enter-active-class="animated fadeInLeft" leave-active-class="animated fadeOutLeft">
-                <ul v-if="flag">
-                    <li class="select-b">
-                        <span class="select-a">哈利波特</span>
+                <ul>
+                    <li class="select-b" @click="changenovel" id="harry">
+                        <span class="select-a" value="">哈利波特</span>
                         <img src="imgs/harry.png" alt="">
                     </li>
-                    <li class="select-b">
-                        <span class="select-a">冰与火之歌</span>
+                    <li class="select-b" @click="changenovel" id="game">
+                        <span class="select-a" value="">冰与火之歌</span>
                         <img src="imgs/game.png" alt="">
                     </li>
-                    <li class="select-b">
-                        <span class="select-a">教父</span>
+                    <li class="select-b" @click="changenovel" id="godfather">
+                        <span class="select-a" value="">教父</span>
                         <img src="imgs/godfather.png" alt="">
                     </li>
-                    <li class="select-b">
-                        <span class="select-a">哈利波特</span>
-                        <img src="imgs/harry.png" alt="">
-                    </li>
-                    <li class="select-b">
-                        <span class="select-a">哈利波特</span>
-                        <img src="imgs/harry.png" alt="">
+                    <li class="select-b" @click="changenovel" id="ring">
+                        <span class="select-a" value="">魔戒</span>
+                        <img src="imgs/ring.png" alt="">
                     </li>
                 </ul>
-            </transition>
-
         </div>
     </header>
     <main>

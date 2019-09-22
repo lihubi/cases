@@ -14,7 +14,8 @@ var vue = new Vue({
     },
     methods:{
            changenovel:function(e){
-            console.log(e.currentTarget.id);
+               //修改背景
+            document.body.style.backgroundImage="url('imgs/"+e.currentTarget.id+"bg.jpg')";
             vue.novelName = e.currentTarget.textContent;
             //获取小说内容
             var xhr = new XMLHttpRequest();

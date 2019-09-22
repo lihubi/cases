@@ -13,12 +13,12 @@ var vue = new Vue({
         novelName:"魔戒"
     },
     methods:{
-        changenovel:function(e){
-            console.log(e.path[1].textContent);
-            vue.novelName = e.path[1].textContent;
+           changenovel:function(e){
+            console.log(e.currentTarget.id);
+            vue.novelName = e.currentTarget.textContent;
             //获取小说内容
             var xhr = new XMLHttpRequest();
-            xhr.open("GET","txt/"+e.path[1].id+".txt",true);
+            xhr.open("GET","txt/"+e.currentTarget.id+".txt",true);
             xhr.send();
             xhr.onload = function () {
                 //将小说保存到novel中

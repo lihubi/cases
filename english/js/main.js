@@ -10,13 +10,22 @@ var vue = new Vue({
         novel:"",
         result:[],
         index:0,
-        flag:false,
+        novelName:"魔戒"
     },
     methods:{
-
-        hid:function(){
-            this.flag=!this.flag;
-            console.log(this.flag);
+        changenovel:function(e){
+            console.log(e.path[1].textContent);
+            vue.novelName = e.path[1].textContent;
+            //获取小说内容
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET","txt/"+e.path[1].id+".txt",true);
+            xhr.send();
+            xhr.onload = function () {
+                //将小说保存到novel中
+                vue.novel = xhr.responseText;
+                vue.add();
+                vue.index=0;
+            };
         },
         loads:function(){
             this.$refs.examtran.innerHTML = "<div class='loadbox'>\n" +
@@ -150,7 +159,7 @@ var vue = new Vue({
         };
         //获取小说内容
         var xhr2 = new XMLHttpRequest();
-        xhr2.open("GET","txt/The Return of the King.txt",true);
+        xhr2.open("GET","txt/ring.txt",true);
         xhr2.send();
         xhr2.onload = function () {
             //将小说保存到novel中

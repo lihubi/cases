@@ -57,7 +57,7 @@ var vue = new Vue({
                 if(vue.result!==null){
                     vue.word = vue.wordArray[vue.index].trim();
                     vue.exam = vue.result[0];
-                    // vue.chinese();
+                    vue.chinese();
                 }else{
                     vue.index--;
                     vue.sub();
@@ -81,7 +81,7 @@ var vue = new Vue({
             console.log(sign);
             //翻译单词
             $.ajax({
-                url: 'http://api.fanyi.baidu.com/api/trans/vip/translate',
+                url: 'https://fanyi-api.baidu.com/api/trans/vip/translate',
                 type: 'get',
                 dataType: 'jsonp',
                 data: {
@@ -100,7 +100,7 @@ var vue = new Vue({
                     setTimeout(
                         function () {
                             $.ajax({
-                                url: 'http://api.fanyi.baidu.com/api/trans/vip/translate',
+                                url: 'https://fanyi-api.baidu.com/api/trans/vip/translate',
                                 type: 'get',
                                 dataType: 'jsonp',
                                 data: {

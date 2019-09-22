@@ -23,7 +23,7 @@ header{
     width: 60%;
     height: 100px;
     margin: 5px auto;
-    background-color: #0d0f13;
+    background:rgba(0,0,0,.5);
 }
 .select{
     height: 100%;

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" http-equiv="Access-Control-Allow-Origin:*">
+    <title>英语</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/jquery.2.1.4.min.js"></script>
+    <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+    <link rel="stylesheet" href="css/animate.css">
+</head>
+<body>
+<div class="box" id="app">
+    <header>
+        <img src="imgs/ring.png" @click="hid" alt="" >
+        <div class="select">
+            <transition enter-active-class="animated fadeInLeft" leave-active-class="animated fadeOutLeft">
+                <ul v-if="flag">
+                    <li class="select-b">
+                        <span class="select-a">哈利波特</span>
+                        <img src="imgs/harry.png" alt="">
+                    </li>
+                    <li class="select-b">
+                        <span class="select-a">冰与火之歌</span>
+                        <img src="imgs/game.png" alt="">
+                    </li>
+                    <li class="select-b">
+                        <span class="select-a">教父</span>
+                        <img src="imgs/godfather.png" alt="">
+                    </li>
+                    <li class="select-b">
+                        <span class="select-a">哈利波特</span>
+                        <img src="imgs/harry.png" alt="">
+                    </li>
+                    <li class="select-b">
+                        <span class="select-a">哈利波特</span>
+                        <img src="imgs/harry.png" alt="">
+                    </li>
+                </ul>
+            </transition>
+
+        </div>
+    </header>
+    <main>
+        <div class="ml" @click="sub">
+            <div class="ml-d"></div>
+            <img src="imgs/left.png" width="100%"/>
+        </div>
+        <div class="mm">
+            <div class="word" >
+                <img src="imgs/play.png" alt="" @click="readword">
+                {{wordArray[index]}}
+            </div>
+            <div class="word-tran">{{wordTran}}</div>
+            <div class="exam">例句：
+                <br>
+                <img src="imgs/play.png" alt="" @click="readexam">
+                {{exam}}
+            </div>
+            <hr>
+            <div class="exam-tran" ref="examtran"></div>
+        </div>
+        <div class="mr" @click="add">
+            <div class="mr-d"></div>
+            <img src="imgs/right.png"/>
+        </div>
+    </main>
+    <footer>
+        <span>Accept what was and what is, and you'll have more positive energy to pursue what will be.</span>
+        <p>接受过去和现在的模样，才会有能量去追寻自己的未来。</p>
+    </footer>
+    <div id="audio">
+
+    </div>
+</div>
+<script src="js/main.js"></script>
+
+</body>
+</html>
+
